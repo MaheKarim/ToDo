@@ -35,6 +35,10 @@ class ToDosController extends Controller
    }
 
    public function store(Request $request){
+    $request->validate([
+       'name' => 'required',
+       'description' => 'required',
+    ]);
 
     // $data = request()->all(); as Request $request
     $todo = new Todo();
