@@ -28,6 +28,23 @@ class ToDosController extends Controller
      // return view('todos.show')->with('todo',$todo);
       return view('todos.show', $data);
    }
+
+    public function create(){
+
+    return view('todos.create');
+   }
+
+   public function store(Request $request){
+
+    // $data = request()->all();
+    $todo = new Todo();
+    $todo->name = $request->name;
+    $todo->description = $request->description;
+    // $todo->completed = false;
+    $todo->save();
+
+    return redirect('/todos');
+   }
 }
 
 

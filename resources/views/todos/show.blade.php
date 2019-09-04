@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+    Show | Data
+@endsection
 @section('content')
      <div class="container">
          <h1 class="text-center my-5">
