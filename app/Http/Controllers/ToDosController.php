@@ -12,7 +12,7 @@ class ToDosController extends Controller
 
     # code...
     $data = [];
-    $data['todos'] = ToDo::all();
+    $data['todos'] = Todo::all();
     return view('todos.home', $data);
 
    }
