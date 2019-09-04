@@ -7,3 +7,4 @@ Route::get('/', function () {
 });
 
 Route::get('todos','ToDosController@index');
+Route::get('todos/{todo}','ToDosController@show');

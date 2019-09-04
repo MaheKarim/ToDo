@@ -38,26 +38,31 @@
               </nav>
 
             <!-- Just a navbar end -->
-            <div class="row justify-content-center my-5">
-            <div class="card card-default">
-                    <div class="card-header">
-                        <p class="text-center" style="font-size: 28px">
-                           ToDo Application
-                        </p>
 
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($todos as $todo )
-                              <li class="list-group-item">{{ $todo->name }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+            <div class="card-header">
+                    <p class="text-center" style="font-size: 28px">
+                       ToDo Application
+                    </p>
+
                 </div>
+
+
+
+                <div class="row justify-content-center my-3">
+
+
+                    <div class="card-body">
+                             <ul class="list-group">
+                                @foreach ($todos as $todo )
+                                  <li class="list-group-item">
+                                    {{ $todo->name }}
+                                     <button type="button" class="btn btn-primary btn-sm float-right">View Data</button>
+                                  </li>
+                                  @endforeach
+                             </ul>
+                    </div>
 
        </div>
     </div>
-
-
 </body>
 </html>
