@@ -36,11 +36,11 @@ class ToDosController extends Controller
 
    public function store(Request $request){
 
-    // $data = request()->all();
+    // $data = request()->all(); as Request $request
     $todo = new Todo();
     $todo->name = $request->name;
     $todo->description = $request->description;
-    // $todo->completed = false;
+    $todo->completed = false;
     $todo->save();
 
     return redirect('/todos');
