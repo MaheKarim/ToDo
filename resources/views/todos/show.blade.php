@@ -14,10 +14,12 @@
                  <div class="card-header">
                     Details
                  </div>
+
                  <div class="card-body">
                      {{ $todo->description }}
                  </div>
-             </div>
+                </div>
+                <a href="{{ route("todos.edit", $todo->id) }}" class="btn btn-success btn-sm my-2">Edit</a>
          </div>
      </div>
     </div>
