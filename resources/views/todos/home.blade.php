@@ -21,7 +21,11 @@
                 <tbody>
                     @foreach ($todos as $todo )
                     <tr>
-                    <td scope="row"> {{ $todo->name }}</td>
+                        @if ($todo->completed)
+                        <td scope="row"> <strike>{{ $todo->name }} </strike> </td>
+                        @else
+                        <td scope="row"> {{ $todo->name }}  </td>
+                        @endif
                     <td>
         <a href="/todos/{{ $todo->id }}" type="button" class="btn btn-primary btn-sm float-right">View Data</a >
         <a href="/todos/{{ $todo->id }}/delete" type="button" class="btn btn-danger btn-sm float-right mr-2">Delete</a >
