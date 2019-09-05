@@ -47,6 +47,13 @@
                                    {{ session()->get('updateSuccess') }}
                                </div>
                            @endif
+                           @if (session()->has('completemsg'))
+                             <div class="alert alert-danger">
+                                 {{ session()->get('completemsg') }}
+                             </div>
+                            @endif
+
+
                           @yield('content')
                    </div>
 

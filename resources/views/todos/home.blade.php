@@ -8,11 +8,7 @@
         </p>
     </div>
 
-    @if (session()->has('completemsg'))
-    <div class="alert alert-success">
-        {{ session()->get('completemsg') }}
-    </div>
-   @endif
+
 
     <div class="row justify-content-center my-3">
         <table class="table">
