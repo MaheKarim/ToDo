@@ -8,6 +8,11 @@
         </p>
     </div>
 
+    @if (session()->has('completemsg'))
+    <div class="alert alert-success">
+        {{ session()->get('completemsg') }}
+    </div>
+   @endif
 
     <div class="row justify-content-center my-3">
         <table class="table">
@@ -19,12 +24,15 @@
                 </thead>
                 <tbody>
                     @foreach ($todos as $todo )
-                     <tr>
+                    <tr>
                     <td scope="row"> {{ $todo->name }}</td>
                     <td>
         <a href="/todos/{{ $todo->id }}" type="button" class="btn btn-primary btn-sm float-right">View Data</a >
         <a href="/todos/{{ $todo->id }}/delete" type="button" class="btn btn-danger btn-sm float-right mr-2">Delete</a >
-        <a href="/todos/{{ $todo->id }}/complete" type="button" class="btn btn-warning btn-sm float-right mr-2">Completed</a >
+
+        @if (!$todo->completed)
+         <a href="{{ route('complete', $todo->id) }}" type="button" class="btn btn-warning btn-sm float-right mr-2">Completed</a >
+         @endif
                   </td>
               </tr>
                     @endforeach

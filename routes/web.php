@@ -16,3 +16,4 @@ Route::get('/todo/edit/{todo}','ToDosController@edit')->name("todos.edit");
 Route::post('/update-todos','ToDosController@update')->name("formUpdate");
 
 Route::get('/todos/{todo}/delete','ToDosController@destroy');
+Route::get('/my/todos/{todo}/complete','ToDosController@complete')->name("complete");

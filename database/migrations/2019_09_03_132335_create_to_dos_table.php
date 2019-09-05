@@ -17,7 +17,7 @@ class CreateToDosTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->boolean('completed')->nullable();
+            $table->boolean('completed');
             $table->timestamps();
         });
     }
