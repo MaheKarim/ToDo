@@ -20,7 +20,9 @@
                  </div>
                 </div>
                 <a href="{{ route("todos.edit", $todo->id) }}" class="btn btn-success btn-sm my-2">Edit</a>
+
          </div>
      </div>
-    </div>
+
+
 @endsection

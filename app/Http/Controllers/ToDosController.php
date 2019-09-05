@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ToDosController extends Controller
 {
+
+
    public function index(){
 
     # code...
@@ -46,7 +48,7 @@ class ToDosController extends Controller
     $todo->description = $request->description;
     $todo->completed = false;
     $todo->save();
-
+    session()->flash('success','Todo Create successfully!');
     return redirect('/todos');
    }
 
@@ -67,6 +69,16 @@ class ToDosController extends Controller
     $todo->description = $request->description;
     $todo->save();
 
+    session()->flash('updateSuccess','Successfully Updated!');
+    return redirect('/todos');
+   }
+
+
+
+   public function destroy($id){
+
+    $todo = Todo::find($id);
+    $todo->delete();
     return redirect('/todos');
    }
 }
