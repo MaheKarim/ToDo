@@ -13,7 +13,7 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="{{ url('/') }}">Navbar</a>
+                <a class="navbar-brand" href="{{ url('/') }}">ToDo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,7 +24,7 @@
                       <a class="nav-link" href="{{ url('/todos') }}">Home <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="{{ url('/create-todo') }}">Create New</a>
+                      <a class="btn btn-success" type="button" href="{{ url('/create-todo') }}">Create New</a>
                     </li>
 
 
@@ -35,21 +35,20 @@
                   </form>
                 </div>
               </nav>
-    <div class="container">
-
-        @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-       @endif
-         @if (session()->has('updateSuccess'))
-             <div class="alert alert-primary">
-                 {{ session()->get('updateSuccess') }}
-             </div>
-         @endif
-        @yield('content')
-
-    </div>
+               <hr>
+                  <div class="container ">
+                          @if (session()->has('success'))
+                          <div class="alert alert-success">
+                              {{ session()->get('success') }}
+                          </div>
+                         @endif
+                           @if (session()->has('updateSuccess'))
+                               <div class="alert alert-primary">
+                                   {{ session()->get('updateSuccess') }}
+                               </div>
+                           @endif
+                          @yield('content')
+                   </div>
 
 </body>
 </html>
